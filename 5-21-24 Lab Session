@@ -1,10 +1,8 @@
-The team formatted the MircoSD card for the Xavier NX
+Our team attempted to formatted the MircoSD card for the Xavier NX for the set up.
 Link to download SD Formatter:  https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/
 After formatting the MircoSD card, we inserted it into the Xavier NX
 When we plugged the Xavier NX to display on a monitor, we encountered a "Installation Fail" from the microcontroller.
 We concluded that mybe we formatted our MircoSD incorrectly, so repeated the process again.
 For reference we were following this guide: https://developer.nvidia.com/embedded/learn/get-started-jetson-xavier-nx-devkit#write
-
-
-
-Link for the Jetpack SDK version we will use: https://developer.nvidia.com/embedded/jetpack-sdk-513
+We tried again but still showed the same error. We believe it is because we are not using the latest Card Image.
+Our lab session ends.
