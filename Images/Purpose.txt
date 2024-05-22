@@ -1,0 +1,1 @@
+This folder will be used to upload any images that will used for the project. 
