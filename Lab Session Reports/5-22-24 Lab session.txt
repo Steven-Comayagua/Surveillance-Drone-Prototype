@@ -1,8 +1,8 @@
-Continuing from the previous session, we had multiple attemps to boot the Jetson Xavier NX with an SD Card Image.
-I also failed to mentioned that the OS that we using to format our microSD card is Windows.
-At every attempt, the Jetson Xavier NX would not boot up or display anything to the monitor.
-The team tried multiple time reformatting the micro SD card, these were the steps that we followed:
+Continuing from the previous session, we had multiple attempts to boot the Jetson Xavier NX with an SD Card Image.
+I also failed to mention that the OS that we use to format our microSD card is Windows.
+At every attempt, the Jetson Xavier NX would not boot up or display anything on a computer monitor.
+The team tried multiple times to reformatting the micro SD card, these were the steps that we followed:
 - Reformat the microSD card using the application from this website: https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/
 - On the SD Card Formatter, on "select card" we would select the drive that had our microSD. In our case, the drive was named "D:\".
-- For "Formatting options", we selected "Quick Format". And as instructed, we left "volume label" blank. After that we clicked "Format".
-- 
+- For "Formatting options", we selected "Quick Format". As instructed, we left "volume label" blank. After that, we clicked "Format".
+
