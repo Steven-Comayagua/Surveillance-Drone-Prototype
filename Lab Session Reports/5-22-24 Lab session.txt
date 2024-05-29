@@ -1,1 +1,4 @@
-
+Continuing from the previous session, we had multiple attemps to boot the Jetson Xavier NX with an SD Card Image.
+At every attempt, the Jetson Xavier NX would not boot up or display anything to the monitor.
+The team tried multiple time reformatting the micro SD card, these were the steps that we followed:
+- Reformat the microSD card using the application from this website: 
