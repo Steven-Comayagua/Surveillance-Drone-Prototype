@@ -71,4 +71,76 @@
 ## - Connect the Intel Real Sense
 
 
+## - Install Python 3.12.2 on the Jetson Xavier NX
 
+**Requirements**:
+- Nvidia Jetson Xavier NX
+- Python 3.12.2 source code
+
+### Instructions
+
+1. **Download and Extract Python 3.12.2 Source Code**:
+   - Open a terminal and run the following commands:
+     ```bash
+     cd /usr/src
+     sudo wget https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz
+     sudo tar xzf Python-3.12.2.tgz
+     cd Python-3.12.2
+     ```
+2. **Configure and Install Python 3.12.2**:
+   - Run the following commands to configure and install Python 3.12.2:
+     ```bash
+     sudo ./configure --enable-optimizations
+     sudo make altinstall
+     ```
+3. **Verify the Python Installation**:
+   - Check the installed Python version:
+     ```bash
+     python3.12 --version
+     ```
+     
+## - Installing OpenCV with Python 3.12.2
+
+**Requirements**:
+- Python 3.12.2 installed on the Jetson Xavier NX
+- OpenCV source code and OpenCV contrib modules
+
+### Instructions
+
+1. **Ensure Python 3.12.2 Development Package is Installed**:
+   - Ensure the development files for Python 3.12.2 are present (skip if just installed).
+     ```bash
+     python3.12 --version
+     ```
+2. **Prepare the Build Environment for OpenCV**:
+   - Install necessary dependencies by running the following command:
+     ```bash
+     sudo apt install -y build-essential cmake git pkg-config libgtk-3-dev \
+     libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev \
+     libx264-dev libjpeg-dev libpng-dev libtiff-dev gfortran openexr \
+     libatlas-base-dev python3-dev python3-numpy libtbb2 libtbb-dev libdc1394-22-dev
+     ```
+3. **Download OpenCV and OpenCV Contrib Modules**:
+   - Download the necessary source code by running the following commands:
+     ```bash
+     mkdir -p ~/opencv_build && cd ~/opencv_build
+     git clone https://github.com/opencv/opencv.git
+     git clone https://github.com/opencv/opencv_contrib.git
+     ```
+4. **Build and Install OpenCV**:
+   - Navigate to the OpenCV directory:
+     ```bash
+     cd ~/opencv_build/opencv
+     rm -rf build
+     mkdir build && cd build
+     ```
+   - Run the `cmake` command with the necessary options, specifying the paths to Python 3.12:
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D PYTHON_EXECUTABLE=/usr/local/bin/python3.12 -D PYTHON_INCLUDE_DIR=/usr/local/include/python3.12 -D PYTHON_LIBRARY=/usr/local/lib/libpython3.12.so ..
+```
+   - Build and install OpenCV:
+     ```bash
+     make -j$(nproc)
+     sudo make install
+     sudo ldconfig
+     ```
