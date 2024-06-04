@@ -2,7 +2,7 @@
 
 ## Main Goal:
 
-### Group:
+### Developer team:
 
 <br> 
 
@@ -144,3 +144,28 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
      sudo make install
      sudo ldconfig
      ```
+
+<br> 
+
+## Part 2: Drone hardware assembling 
+
+- [ ] Assemble the frame.
+- [ ] Wiring the Pixhawk with sensors.
+- [ ] Power wirings for Pixhawk and Nvidia Jetson Xavier.
+- [ ] Final touch-up.
+- [ ] Testing.
+
+### Steps to do the tasks:
+
+<br> 
+
+## Part 3: Initial setups
+
+- [ ] Initial frameware setup of the Pixhawk.
+- [ ] Connect the radio connection to the ground station (your PC).
+- [ ] Connect the radio transmitter to the manual controller (RC).
+- [ ] Test the GPS signal.
+- [ ] Arm the drone.
+- [ ] Manual flight test.
+
+### Steps to do the tasks:
