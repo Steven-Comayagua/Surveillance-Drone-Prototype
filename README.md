@@ -169,3 +169,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 - [ ] Manual flight test.
 
 ### Steps to do the tasks:
+References used to set up the Pixhawk6X frameware: 
+- https://ardupilot.org/plane/docs/common-holybro-pixhawk6X.html#loading-firmware
+- https://firmware.ardupilot.org/Copter/stable/Pixhawk6X/
