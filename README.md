@@ -9,7 +9,7 @@
 ## Part 1: Image classification 
 
 - [x] Setup the Nvidia Jetson Xavier.
-- [ ] Connect the Intel Real Sense.
+- [x] Connect the Intel Real Sense.
 - [ ] Publish the live output of the main and depth camera.
 - [ ] Implement a mobile version of an image classification model (YOLO 8 for instance), which would be the most advanced one that works the best on the hardware.
 - [ ] Provide the CPU usage (you need to have some CPU capacity left for later specific calculations).
