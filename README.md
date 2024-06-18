@@ -71,24 +71,24 @@
 ## - Connect the Intel Real Sense
 
 
-## - Install Python 3.12.2 on the Jetson Xavier NX
+### - Install Python 3.8.10 on the Jetson Xavier NX**
 
 **Requirements**:
 - Nvidia Jetson Xavier NX
-- Python 3.12.2 source code
+- Python 3.8.10 source code
 
 ### Instructions
 
-1. **Download and Extract Python 3.12.2 Source Code**:
+1. **Download and Extract Python 3.8.10 Source Code**:
    - Open a terminal and run the following commands:
      ```bash
      cd /usr/src
-     sudo wget https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz
-     sudo tar xzf Python-3.12.2.tgz
-     cd Python-3.12.2
+     sudo wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
+     sudo tar xzf Python-3.8.10.tgz
+     cd Python-3.8.10
      ```
-2. **Configure and Install Python 3.12.2**:
-   - Run the following commands to configure and install Python 3.12.2:
+2. **Configure and Install Python 3.8.10**:
+   - Run the following commands to configure and install Python 3.8.10:
      ```bash
      sudo ./configure --enable-optimizations
      sudo make altinstall
@@ -96,21 +96,21 @@
 3. **Verify the Python Installation**:
    - Check the installed Python version:
      ```bash
-     python3.12 --version
+     python3 --version
      ```
      
-## - Installing OpenCV with Python 3.12.2
+## - Installing OpenCV with Python 3.8.10
 
 **Requirements**:
-- Python 3.12.2 installed on the Jetson Xavier NX
+- Python 3.8.10 installed on the Jetson Xavier NX
 - OpenCV source code and OpenCV contrib modules
 
 ### Instructions
 
-1. **Ensure Python 3.12.2 Development Package is Installed**:
-   - Ensure the development files for Python 3.12.2 are present (skip if just installed).
+1. **Ensure Python 3.8.10 Development Package is Installed**:
+   - Ensure the development files for Python 3.8.10 are present (skip if just installed).
      ```bash
-     python3.12 --version
+     python3 --version
      ```
 2. **Prepare the Build Environment for OpenCV**:
    - Install necessary dependencies by running the following command:
@@ -136,7 +136,7 @@
      ```
    - Run the `cmake` command with the necessary options, specifying the paths to Python 3.12:
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D PYTHON_EXECUTABLE=/usr/local/bin/python3.12 -D PYTHON_INCLUDE_DIR=/usr/local/include/python3.12 -D PYTHON_LIBRARY=/usr/local/lib/libpython3.12.so ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D PYTHON_EXECUTABLE=/usr/local/bin/python3.8-D PYTHON_INCLUDE_DIR=/usr/local/include/python3.8-D PYTHON_LIBRARY=/usr/local/lib/libpython3.12.so ..
 ```
    - Build and install OpenCV:
      ```bash
@@ -156,6 +156,20 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 - [ ] Testing.
 
 ### Steps to do the tasks:
+
+Assemble the frame:
+![image](https://github.com/Steven-Comayagua/Surveillance-Drone-Prototype/assets/93970988/73684d5a-c248-4cdb-af31-51f15f1df36a)
+
+Holybro X500v2 Assembly Instructions: https://docs.px4.io/main/en/frames_multicopter/holybro_x500V2_pixhawk5x.html#assembly:~:text=Kit%20Hardware-,Assembly,-PX4%20Configuration
+
+
+Wiring the Pixhawk with sensors:
+![image](https://github.com/Steven-Comayagua/Surveillance-Drone-Prototype/assets/93970988/4c4af8c1-6dba-4aee-a217-9528f46ab05f)
+
+Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.html
+
+
+
 
 <br> 
 
