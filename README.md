@@ -151,6 +151,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 
 - [x] Assemble the frame.
 - [x] Wiring the Pixhawk with sensors.
+- [ ] Print the pieces for attaching the Nvidia Jetson Xavier, and the Intel Real Sense.
 - [ ] Power wirings for Pixhawk and Nvidia Jetson Xavier.
 - [ ] Final touch-up.
 - [ ] Testing.
@@ -178,6 +179,7 @@ Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.ht
 - [x] Initial frameware setup of the Pixhawk.
 - [x] Connect the radio connection to the ground station (your PC).
 - [ ] Connect the radio transmitter to the manual controller (RC).
+- [ ] If you have problem with the compatibility, use PS4 joystick to connect as RC for the manual flight mode.
 - [ ] Test the GPS signal.
 - [ ] Arm the drone.
 - [ ] Manual flight test.
@@ -186,3 +188,12 @@ Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.ht
 References used to set up the Pixhawk6X frameware: 
 - https://ardupilot.org/plane/docs/common-holybro-pixhawk6X.html#loading-firmware
 - https://firmware.ardupilot.org/Copter/stable/Pixhawk6X/
+
+
+  <br> 
+
+## Part 4: Visual Inertial Odometry (VIO)
+
+- [ ] Find the Github repository related to VIO for Pixhawk.
+- [ ] Follow the instructions and provide any difficulties or changes needed.
+- [ ] Test the VIO for indoor HOLD mode (it means to take off and hover in place at a stable altitude without the need for RC).
