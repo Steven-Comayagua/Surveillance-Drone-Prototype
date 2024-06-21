@@ -179,7 +179,9 @@ Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.ht
 - [x] Initial frameware setup of the Pixhawk.
 - [x] Connect the radio connection to the ground station (your PC).
 - [ ] Connect the radio transmitter to the manual controller (RC).
-- [ ] If you have problem with the compatibility, use PS4 joystick to connect as RC for the manual flight mode.
+- [ ] If you have a problem with the compatibility, use the PS4 joystick to connect as RC for the manual flight mode.
+- [ ] Provide the configuration for the joystick to be the same controller as a regular flight RC.
+- [ ] Make sure to have a KILL switch either if you are using RC or the joystick.
 - [ ] Test the GPS signal.
 - [ ] Arm the drone.
 - [ ] Manual flight test.
@@ -194,6 +196,7 @@ References used to set up the Pixhawk6X frameware:
 
 ## Part 4: Visual Inertial Odometry (VIO)
 
-- [ ] Find the Github repository related to VIO for Pixhawk.
+- [ ] Search for the possible ways to activate POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode for your Pixhawk 6x and go through the steps.
+- [ ] Find the Github repository or video related to Visual Inertial Odometry (VIO) for Pixhawk.
 - [ ] Follow the instructions and provide any difficulties or changes needed.
-- [ ] Test the VIO for indoor HOLD mode (it means to take off and hover in place at a stable altitude without the need for RC).
+- [ ] Test the VIO for indoor HOLD and POSITION mode.
