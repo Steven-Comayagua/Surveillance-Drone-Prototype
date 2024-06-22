@@ -3,6 +3,11 @@
 ## Main Goal:
 
 ### Developer team:
+- Javier C.
+- Steven C.
+- Leandra G.
+- Weijie H.
+- Edward P.
 
 <br> 
 
@@ -151,7 +156,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 
 - [x] Assemble the frame.
 - [x] Wiring the Pixhawk with sensors.
-- [ ] Print the pieces for attaching the Nvidia Jetson Xavier, and the Intel Real Sense.
+- [x] Print the pieces for attaching the Nvidia Jetson Xavier, and the Intel Real Sense.
 - [ ] Power wirings for Pixhawk and Nvidia Jetson Xavier.
 - [ ] Final touch-up.
 - [ ] Testing.
@@ -170,26 +175,100 @@ Wiring the Pixhawk with sensors:
 Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.html
 
 
-
-
 <br> 
 
 ## Part 3: Initial setups
 
 - [x] Initial frameware setup of the Pixhawk.
+- [x] Connect SiK Telemetry Radio. 
 - [x] Connect the radio connection to the ground station (your PC).
 - [ ] Connect the radio transmitter to the manual controller (RC).
-- [ ] If you have a problem with the compatibility, use the PS4 joystick to connect as RC for the manual flight mode.
+- [x] If you have a problem with the compatibility, use the PS4 joystick to connect as RC for the manual flight mode.
 - [ ] Provide the configuration for the joystick to be the same controller as a regular flight RC.
 - [ ] Make sure to have a KILL switch either if you are using RC or the joystick.
-- [ ] Test the GPS signal.
-- [ ] Arm the drone.
+- [x] Test the GPS signal.
+- [x] Test - Arm the drone.
 - [ ] Manual flight test.
 
 ### Steps to do the tasks:
 References used to set up the Pixhawk6X frameware: 
 - https://ardupilot.org/plane/docs/common-holybro-pixhawk6X.html#loading-firmware
 - https://firmware.ardupilot.org/Copter/stable/Pixhawk6X/
+
+
+### Calibrating SIK Telemetry Radio
+
+We are using a SIK Telemetry Radio v3 connected to the TELEM1 port on the Pixhawk 6x. This needs to be calibrated on ArduPilot before any flight.
+
+1. **Connect the SIK Telemetry Radio**: Plug the SIK telemetry radio into the TELEM1 port on the Pixhawk 6x.
+2. **Configure the Radio in Mission Planner**:
+    - Open Mission Planner.
+    - Navigate to `Initial Setup` > `Optional Hardware` > `SiK Radio`.
+    - Follow the instructions to set the correct parameters for the telemetry radio.
+3. **Calibrate the Radio**: Ensure the telemetry radios on both the ground and air units are communicating correctly.
+
+References:
+- [Mission Planner SiK Radio Setup](https://ardupilot.org/copter/docs/common-3dr-radio.html)
+  
+
+#### Optional - Joystick Manual Test Flight
+
+We used ArduPilot to manually fly our drone with an RC (PS4 controller in our case with the joystick option within ArduPilot). 
+The radio controller setting RC option is also the best and favored option, but at this moment, our selected receiver (AR410) isn't working correctly with our Pixhawk 6x.
+
+1. Configure all the needed joystick direction flight options, making sure to have an ARM and DISARM button.
+2. Follow the steps online for detailed instructions on how to set up and configure the manual test flight.
+3. Keep in mind, the manual flight is not using any sensors, so the flight of the drone will be hard to control.
+
+References:
+- [ArduPilot Joystick Setup](https://ardupilot.org/copter/docs/common-joystick.html)
+- [ArduPilot Manual Flight Mode](https://ardupilot.org/copter/docs/ac2_manualmode.html)
+
+Suggested PS4 Joystick flight mapping and (X O □ ∆)
+Set ARM to "X"
+Set KILL SWITCH to "O"
+Set DISARM to "□"
+Set Takeoff to "∆"
+
+<p align="center">
+  <img src="https://github.com/Steven-Comayagua/Surveillance-Drone-Prototype/assets/93970988/30b31ecd-bc07-4857-b21f-fc60add3907e" alt="Joystick Mapping to use for PS4 Controller">
+</p>
+
+
+#### Optional - RC Manual Test Flight
+
+For manual flight using the RC (Radio Control) system, here are the steps:
+1. **Connecting the Receiver**: Connect the AR410 receiver to the Pixhawk 6x through the 3 RC-IN pins.
+   The ground (black), power (red), and signal (usually white - orange) wires to the RC pins on the Pixhawk.
+2. **Setting Up RC**: We are using a DX6e, bind the receiver the the RC.
+4. **Calibrating the Controls**: Use ArduPilot Mission Planner or QGroundControl to calibrate your transmitter and set up the required flight modes.
+5. **Configuring Safety Features**: Ensure you have ARM and DISARM buttons configured, and set up failsafe options to handle loss of RC signal.
+
+References:
+- [PX4 RC Setup Guide](https://docs.px4.io/main/en/getting_started/rc_transmitter_receiver.html)
+- [ArduPilot RC Input Guide](https://ardupilot.org/copter/docs/common-rc-transmitter-configuration.html)
+
+-Kill Switch Section-
+
+
+### Testing the GPS Signal
+
+We are using an M8N GPS module connected to the GPS1 port on the Pixhawk 6x.
+
+1. **Connect the GPS Module**: Attach the M8N GPS module to the GPS1 port on the Pixhawk 6x.
+2. **Power On the System**: Ensure the drone's power system is correctly connected and power on the system.
+3. **Open Mission Planner**: Launch Mission Planner on your computer.
+4. **Check GPS Status**: Navigate to the Flight Data screen and check the GPS status
+
+
+### Test - Arm the drone.
+
+1. Without the blades attached to the motors, power on the drone and ensure all systems are functioning.
+2. Test the ARM button: Press the ARM button and verify that the motors begin to spin.
+3. Test the DISARM button: Press the DISARM button and ensure that the motors stop spinning.
+4. Test the KILL switch: Press the KILL switch to confirm it immediately stops the motors in case of an emergency.
+
+Ensure all these safety features are working correctly before proceeding to attach the blades or perform any flight tests.
 
 
   <br> 
