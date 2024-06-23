@@ -28,7 +28,7 @@
 **Requirements**:
 - Nvidia Jetson Xavier NX
 - MicroSD card (minimum 32GB recommended)
-- Linux environment (or virtual machine with Linux)
+- Linux OS (Ubuntu)
 - USB-C cable
 - Power supply cable for the Jetson Xavier NX
 - Monitor, keyboard, and mouse for initial setup
