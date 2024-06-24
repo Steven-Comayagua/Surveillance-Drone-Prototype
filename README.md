@@ -9,6 +9,12 @@
 - Weijie H.
 - Edward P.
 
+### Supervisor:
+- Pooyan Ghodrati.
+
+### Advisor:
+- Dr. Bin Hu.
+
 <br> 
 
 ## Part 1: Image classification 
