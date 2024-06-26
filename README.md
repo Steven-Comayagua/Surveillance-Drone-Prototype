@@ -276,10 +276,24 @@ We are using an M8N GPS module connected to the GPS1 port on the Pixhawk 6x.
 
 Ensure all these safety features are working correctly before proceeding to attach the blades or perform any flight tests.
 
+  <br> 
+
+## Part 4.01: Local positioning (indoor flight) using Optitrack system.
+
+- [ ] Search for the provided documentation provided for the Pixhawk and follow the steps.
+- [ ] Make sure to adjust the drone's predefined coordination (X, Y, Z) with the Optitrack coordination, and fix the initial point.
+- [ ] Fix your initial position on the field.
+- [ ] Add markers to the drone and make a rigid body.
+- [ ] publish the data from the Optitrack side as a ROS node.
+- [ ] Print the location data from the ROS node to make sure everything is fine.
+- [ ] Do the required wiring connections to connect Jetson to Pixhawk
+- [ ] Follow the steps for completing the architecture of ROS on the Jetson device.
+- [ ] Test the result by trying POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode from your flight controller (Ardupilot or QGC).
+
 
   <br> 
 
-## Part 4: Visual Inertial Odometry (VIO)
+## Part 4.02 (optional): Visual Inertial Odometry (VIO)
 
 - [ ] Search for the possible ways to activate POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode for your Pixhawk 6x and go through the steps.
 - [ ] Find the Github repository or video related to Visual Inertial Odometry (VIO) for Pixhawk.
