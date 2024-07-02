@@ -1,0 +1,16 @@
+Binding the R86C to TX 12MKII
+  Resources used:
+  For the receiver- https://www.youtube.com/watch?v=OcyIeuiUPn8
+  For the transmitter- https://www.youtube.com/watch?v=Brn0fR7Cskw
+Power on the R86C while holding the button, which puts it into bind mode. The it will cycle through flashes, 3 single flashes = D8 protocol, 3 double flashes = D16 protocol, and 3 triple flashes = S-FHSS protocol.
+Power on the Radiomaster TX 12 and press the models button. Go to the next page and change the internal RF type to 'FrSky X'. We used the subtype 'D16'. Scroll down and press bind whenever the R86C is flashing the desired protocol, in our case flashing 3 double flashes. The receiver is going to have a solid red light when it is successfully bound. Disconnect and reconnect the receiver from power to ensure good connection.
+
+Arming/Disarming the drone
+  Resources used: https://www.youtube.com/watch?v=zLcB24e8ZEc
+In order to setup the disarming and arming through the RC controller, four logical functions were used. The first, L01, is a<x condition when the throttle is larger than -98, which is downwards. L04 is an AND condition when the E switch is down and L01 is true. This will serve as our disarm function. L05 is an AND condition when the E switch is up and L01 is true. Lastly, L06 is a 'sticky' function when L04 is true and stops when L05 is true. [not finished]
+
+Throttle cut
+  Resources used: https://www.youtube.com/watch?v=BbQw-46SJZk
+To set up a throttle cut or killswitch, a special function was created within the model. Select the model button, use the page button until page 10, and select an empty row. Flip switch F down to set it as the trigger for the function to start. In the next column, 'Overr.' is selected. Next column is CH3, this is the throttle. Make the value -100 and check the box in the last column. Now, when switch F is down, it will cut the throttle.
+
+Connecting the RC to the drone
