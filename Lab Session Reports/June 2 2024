@@ -14,3 +14,9 @@ Throttle cut
 To set up a throttle cut or killswitch, a special function was created within the model. Select the model button, use the page button until page 10, and select an empty row. Flip switch F down to set it as the trigger for the function to start. In the next column, 'Overr.' is selected. Next column is CH3, this is the throttle. Make the value -100 and check the box in the last column. Now, when switch F is down, it will cut the throttle.
 
 Connecting the RC to the drone
+
+Failsafe
+  Resources used:
+  https://www.youtube.com/watch?v=fqDSFNwOI6Q
+  https://www.youtube.com/watch?v=wk3eXNFFXHM
+In the setup page of the model, scroll down until 'Failsafe' is selected. We set our failsafe to 'No pulses'.
