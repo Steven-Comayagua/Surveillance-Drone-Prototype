@@ -20,3 +20,8 @@ Failsafe
   https://www.youtube.com/watch?v=fqDSFNwOI6Q
   https://www.youtube.com/watch?v=wk3eXNFFXHM
 In the setup page of the model, scroll down until 'Failsafe' is selected. We set our failsafe to 'No pulses'.
+
+Resetting RadioMaster TX12
+  Resources used:
+  https://www.youtube.com/watch?v=_RfaWYX7few
+During testing, the radio wouldn't let us change the model. This required a reset of the radio. Following the YouTube tutorial listed above, the radio was plugged into a computer. In file explorer, MODEL folder was selected and the corrupt model was deleted, allowing us to resume setting up.
