@@ -241,14 +241,39 @@ Set Takeoff to "∆"
 </p>
 
 
-#### Optional - RC Manual Test Flight
-
 For manual flight using the RC (Radio Control) system, here are the steps:
-1. **Connecting the Receiver**: Connect the AR410 receiver to the Pixhawk 6x through the 3 RC-IN pins.
-   The ground (black), power (red), and signal (usually white - orange) wires to the RC pins on the Pixhawk.
-2. **Setting Up RC**: We are using a DX6e, bind the receiver the the RC.
-4. **Calibrating the Controls**: Use ArduPilot Mission Planner or QGroundControl to calibrate your transmitter and set up the required flight modes.
-5. **Configuring Safety Features**: Ensure you have ARM and DISARM buttons configured, and set up failsafe options to handle loss of RC signal.
+
+1. **Connecting the Receiver**:
+   - Connect the R86C receiver to the Pixhawk 6x through the `RC-IN` pins.
+   - Ensure the ground (black), power (red), and signal (usually white or orange) wires are properly connected to the corresponding RC pins on the Pixhawk.
+
+2. **Binding the TX12 MK2 with the R86C Receiver**:
+   - **Set the TX12 MK2 to Bind Mode**:
+     - Power on the Radiomaster TX12 MK2.
+     - Access the Model Setup page by long-pressing the `SYS` button.
+     - Navigate to the `Internal RF` settings and set the `Mode` to `MULTI`, the `Type` to `FrSky X`, and the `Subtype` to `D16`.
+     - Scroll down and select the `Bind` option.
+   **Bind the R86C Receiver**:
+     - Power on the R86C receiver while holding the bind button until the LED indicates it is in binding mode (typically solid or fast blinking).
+     - The R86C receiver cycles through different protocols indicated by different LED flash patterns. Ensure it is in the correct mode for your transmitter (FrSky D16).
+     - Once bound, the LED on the receiver should change to a solid color or a slow blink indicating a successful bind.
+     - Power the receiver off and then on again to confirm the binding.
+     - Exit bind mode on the TX12 MK2 and ensure the receiver LED remains in the bound state.
+
+
+3. **Setting Up RC**:
+   - Ensure the Radiomaster TX12 MK2 and R86C receiver are properly bound.
+   - Verify the transmitter settings, ensuring channels are correctly mapped and configured.
+
+4. **Calibrating the Controls**:
+   - Use ArduPilot Mission Planner or QGroundControl to calibrate your transmitter.
+   - Navigate to the `Radio Calibration` section under `Initial Setup` (Mission Planner) or the `Radio` tab under `Vehicle Setup` (QGroundControl).
+   - Follow the on-screen instructions to move the sticks and switches on your transmitter to their extremes to calibrate the radio input.
+
+5. **Configuring Safety Features**:
+   - Ensure you have ARM and DISARM buttons configured on your transmitter.
+   - Set up failsafe options to handle the loss of RC signal. This can be done in the `Failsafe` settings within Mission Planner or QGroundControl.
+   - Verify that failsafe actions are correctly configured to ensure the safety of the vehicle in case of signal loss.
 
 References:
 - [PX4 RC Setup Guide](https://docs.px4.io/main/en/getting_started/rc_transmitter_receiver.html)
