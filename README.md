@@ -197,10 +197,29 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 ### Steps to do the tasks:
 
 Assemble the frame:
-![image](https://github.com/Steven-Comayagua/Surveillance-Drone-Prototype/assets/93970988/73684d5a-c248-4cdb-af31-51f15f1df36a)
+
+<img width="459" alt="Screenshot 2024-08-14 at 1 38 38 PM" src="https://github.com/user-attachments/assets/36447569-fd5e-42a6-badd-03e6b59d2bb4">
 
 Holybro X500v2 Assembly Instructions: https://docs.px4.io/main/en/frames_multicopter/holybro_x500V2_pixhawk5x.html#assembly:~:text=Kit%20Hardware-,Assembly,-PX4%20Configuration
 
+### Assembly Instructions 
+
+<img width="682" alt="Screenshot 2024-08-14 at 1 37 46 PM" src="https://github.com/user-attachments/assets/341bb125-ca4a-4818-a6fd-764b95169bb1">
+
+#### Assembling the Frame
+   1. Push the rubber grippers into the holders (Do not use any sharp items).
+   2. Pass the holders through the holder bars with the battery holder bases.
+<img width="536" alt="Screenshot 2024-08-14 at 1 39 27 PM" src="https://github.com/user-attachments/assets/9d42c5f1-f797-434e-a664-3d52e5e7cc11">
+<img width="537" alt="Screenshot 2024-08-14 at 1 39 46 PM" src="https://github.com/user-attachments/assets/dc6a2718-17bb-4b87-9efe-a68b73efd071">
+
+**Attach the bottom plate to the payload holder:**
+   1. Gather parts as shown in Figure 4.
+   2. Mount the base for the power distribution board using nylon nuts (Figure 5).
+   3. Join the bottom plate to the payload holder using 8 hex screws.
+<img width="537" alt="Screenshot 2024-08-14 at 1 40 32 PM" src="https://github.com/user-attachments/assets/13225104-7438-4a0b-8c47-d5d162a80df6">
+<img width="449" alt="Screenshot 2024-08-14 at 1 40 56 PM" src="https://github.com/user-attachments/assets/1ece0a77-135e-4e35-ab52-0e30adfb9391">
+<img width="535" alt="Screenshot 2024-08-14 at 1 41 53 PM" src="https://github.com/user-attachments/assets/8864527e-eee6-4b23-98b0-fe909623d280">
+<img width="538" alt="Screenshot 2024-08-14 at 1 42 15 PM" src="https://github.com/user-attachments/assets/2cda3cfc-3c8d-4914-b034-b248b174c72d">
 
 Wiring the Pixhawk with sensors:
 ![image](https://github.com/Steven-Comayagua/Surveillance-Drone-Prototype/assets/93970988/4c4af8c1-6dba-4aee-a217-9528f46ab05f)
