@@ -21,10 +21,10 @@
 
 - [x] Setup the Nvidia Jetson Xavier.
 - [x] Connect the Intel Real Sense.
-- [ ] Publish the live output of the main and depth camera.
+- [x] Publish the live output of the main and depth camera.
 - [ ] Implement a mobile version of an image classification model (YOLO 8 for instance), which would be the most advanced one that works the best on the hardware.
-- [ ] Provide the CPU usage (you need to have some CPU capacity left for later specific calculations).
-- [ ] Publish the live results on a local IP in which the ground station be able to access the results.
+- [x] Provide the CPU usage (you need to have some CPU capacity left for later specific calculations).
+- [x] Publish the live results on a local IP in which the ground station be able to access the results.
 
 ### Steps to do the tasks:
 
@@ -163,7 +163,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 - [x] Assemble the frame.
 - [x] Wiring the Pixhawk with sensors.
 - [x] Print the pieces for attaching the Nvidia Jetson Xavier, and the Intel Real Sense.
-- [ ] Power wirings for Pixhawk and Nvidia Jetson Xavier.
+- [x] Power wirings for Pixhawk and Nvidia Jetson Xavier.
 - [ ] Final touch-up.
 - [ ] Testing.
 
@@ -214,13 +214,13 @@ Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.ht
 - [x] Initial frameware setup of the Pixhawk.
 - [x] Connect SiK Telemetry Radio. 
 - [x] Connect the radio connection to the ground station (your PC).
-- [ ] Connect the radio transmitter to the manual controller (RC).
+- [x] Connect the radio transmitter to the manual controller (RC).
 - [x] If you have a problem with the compatibility, use the PS4 joystick to connect as RC for the manual flight mode.
-- [ ] Provide the configuration for the joystick to be the same controller as a regular flight RC.
-- [ ] Make sure to have a KILL switch either if you are using RC or the joystick.
+- [x] Provide the configuration for the joystick to be the same controller as a regular flight RC.
+- [x] Make sure to have a KILL switch either if you are using RC or the joystick.
 - [x] Test the GPS signal.
 - [x] Test - Arm the drone.
-- [ ] Manual flight test.
+- [x] Manual flight test.
 
 ### Steps to do the tasks:
 References used to set up the Pixhawk6X frameware: 
@@ -330,13 +330,13 @@ Ensure all these safety features are working correctly before proceeding to atta
 
 ## Part 4.01: Local positioning (indoor flight) using Optitrack system.
 
-- [ ] Search for the provided documentation provided for the Pixhawk and follow the steps.
-- [ ] Make sure to adjust the drone's predefined coordination (X, Y, Z) with the Optitrack coordination, and fix the initial point.
-- [ ] Fix your initial position on the field.
-- [ ] Add markers to the drone and make a rigid body.
+- [x] Search for the provided documentation provided for the Pixhawk and follow the steps.
+- [x] Make sure to adjust the drone's predefined coordination (X, Y, Z) with the Optitrack coordination, and fix the initial point.
+- [x] Fix your initial position on the field.
+- [x] Add markers to the drone and make a rigid body.
 - [ ] publish the data from the Optitrack side as a ROS node.
 - [ ] Print the location data from the ROS node to make sure everything is fine.
-- [ ] Do the required wiring connections to connect Jetson to Pixhawk
+- [x] Do the required wiring connections to connect Jetson to Pixhawk
 - [ ] Follow the steps for completing the architecture of ROS on the Jetson device.
 - [ ] Test the result by trying POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode from your flight controller (Ardupilot or QGC).
 
