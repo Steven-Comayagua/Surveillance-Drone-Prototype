@@ -25,6 +25,7 @@
 - [ ] Implement a mobile version of an image classification model (YOLO 8 for instance), which would be the most advanced one that works the best on the hardware.
 - [x] Provide the CPU usage (you need to have some CPU capacity left for later specific calculations).
 - [x] Publish the live results on a local IP in which the ground station be able to access the results.
+- [ ] You need to make the drone fully wireless, so you should make sure you will not need to have any initializations on the Jetson before your flight with getting a wired connection to it (hint: the Jetson can turn on automatically and get connected to specific wifi or even provide its own hotspot. So, by knowing its IP, you should be able to SHH into it from the ground station and run your codes.).
 
 ### Steps to do the tasks:
 
