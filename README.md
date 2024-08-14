@@ -167,6 +167,32 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
 - [ ] Final touch-up.
 - [ ] Testing.
 
+### Bill of Materials
+
+**Holybro X500 V2 Frame Kit:**
+- Body: Full Carbon Fiber Top & Bottom plate (144 x 144mm, 2mm thick)
+- Arm: High strength & ultra-lightweight 16mm carbon fiber tubes
+- Landing gear: 16mm & 10mm diameter carbon fiber tubes
+- Platform board: With mounting holes for GPS & popular companion computer
+- Dual 10mm Ø rod x 250 mm long rail mounting system
+- Battery mount with two Battery Straps
+- Hand tools for installation
+- Holybro Motors: 2216 KV880 x4 (superseded - check spare parts list for the current version)
+- Holybro BLHeli S ESC 20A x4 (superseded - check spare parts list for the current version)
+- Propellers: 1045 x4 (superseded - check spare parts list for the current version)
+- Power Distribution Board: XT60 plug for battery & XT30 plug for ESCs & peripherals
+- M8N GPS
+
+**Additional components needed which are NOT included in the kit:**
+- Flight controller (Pixhawk 6X recommended)
+- RC Radio Transmitter
+- RC Receiver (Compatible with RC Radio)
+- 433/915 MHz Telemetry Radio
+- Battery (Holybro recommends a 4S 5000mAh LiPo battery)
+- Camera / Camera Mount
+
+(The Holybro X500 V2 Kit is compatible with most flight controllers supported by ArduPilot.)
+
 ### Steps to do the tasks:
 
 Assemble the frame:
@@ -259,7 +285,6 @@ For manual flight using the RC (Radio Control) system, here are the steps:
      - Once bound, the LED on the receiver should change to a solid color or a slow blink indicating a successful bind.
      - Power the receiver off and then on again to confirm the binding.
      - Exit bind mode on the TX12 MK2 and ensure the receiver LED remains in the bound state.
-
 
 3. **Setting Up RC**:
    - Ensure the Radiomaster TX12 MK2 and R86C receiver are properly bound.
