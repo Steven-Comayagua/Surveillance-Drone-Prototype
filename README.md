@@ -359,17 +359,9 @@ For manual flight using the RC (Radio Control) system, here are the steps:
    - Navigate to the `Radio Calibration` section under `Initial Setup` (Mission Planner) or the `Radio` tab under `Vehicle Setup` (QGroundControl).
    - Follow the on-screen instructions to move the sticks and switches on your transmitter to their extremes to calibrate the radio input.
 
-5. **Configuring Safety Features**:
-   - Ensure you have ARM and DISARM buttons configured on your transmitter.
-   - Set up failsafe options to handle the loss of RC signal. This can be done in the `Failsafe` settings within Mission Planner or QGroundControl.
-   - Verify that failsafe actions are correctly configured to ensure the safety of the vehicle in case of signal loss.
-
 References:
 - [PX4 RC Setup Guide](https://docs.px4.io/main/en/getting_started/rc_transmitter_receiver.html)
 - [ArduPilot RC Input Guide](https://ardupilot.org/copter/docs/common-rc-transmitter-configuration.html)
-
--Kill Switch Section-
-
 
 ### Testing the GPS Signal
 
@@ -380,13 +372,39 @@ We are using an M8N GPS module connected to the GPS1 port on the Pixhawk 6x.
 3. **Open Mission Planner**: Launch Mission Planner on your computer.
 4. **Check GPS Status**: Navigate to the Flight Data screen and check the GPS status
 
+### Configure ARM/DISARM Buttons in ArduPilot
 
-### Test - Arm the drone.
+2. **Set ARM/DISARM Parameters:**
+   - Connect the drone to ArduPilot (QGroundControl or Mission Planner).
+   - Find `ARMING_CHECK` and enable all necessary safety checks.
+   - Assign ARM to `RCx_OPTION = (**CHECK ARDU**)` and DISARM to `RCx_OPTION = (**CHECK ARDU**)` (where `x` is the channel number).
 
-1. Without the blades attached to the motors, power on the drone and ensure all systems are functioning.
-2. Test the ARM button: Press the ARM button and verify that the motors begin to spin.
-3. Test the DISARM button: Press the DISARM button and ensure that the motors stop spinning.
-4. Test the KILL switch: Press the KILL switch to confirm it immediately stops the motors in case of an emergency.
+4. **Bind ARM/DISARM on RC TX12 MK2:**
+   - On RC TX12 MK2, open the model setup menu and map a two-position switch (e.g., Switch (**CHECK ARDU**)) to the ARM/DISARM channel.
+
+### Step 2: Configure the KILL Switch
+
+1. **Assign KILL Switch in ArduPilot:**
+   - Set `RCx_OPTION = (**CHECK ARDU**)` (where `x` is the channel number for the KILL switch).
+   - Ensure it’s on a different channel than ARM/DISARM.
+
+2. **Bind KILL Switch on RC TX12 MK2:**
+   - On RC TX12 MK2, assign a three-position switch (e.g., Switch (**CHECK ARDU**)) to the KILL function for quick emergency access.
+
+### Step 3: Testing the Setup
+
+1. **Test ARM Function:**
+   - Power on the drone (without blades) and press the ARM switch on RC TX12 MK2.
+   - Verify the motors start spinning.
+
+2. **Test DISARM Function:**
+   - Turn the DISARM switch on RC TX12 MK2.
+   - Ensure that all the motors stopped moving.
+
+3. **Test KILL Switch:**
+   - Rearm the drone
+   - While motors are spinning, activate the KILL switch.
+   - Confirm the motors stop immediately.
 
 Ensure all these safety features are working correctly before proceeding to attach the blades or perform any flight tests.
 
