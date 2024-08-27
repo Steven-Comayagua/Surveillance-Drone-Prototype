@@ -270,6 +270,26 @@ Wiring the Pixhawk with sensors:
 
 Pixhawk 6x Wiring: https://docs.px4.io/main/en/assembly/quick_start_pixhawk6x.html
 
+#### Printing the Mounting Pieces for Nvidia Jetson Xavier and Intel RealSense
+
+To securely attach the Nvidia Jetson Xavier and Intel RealSense to the drone, you will need to 3D print custom mounting pieces.
+
+1. **Download the CAD Files**:
+   - For the Intel RealSense mounting, use the provided CAD print files available on the Holybro website. These files are also attached to this GitHub repository for convenience.
+   - The Nvidia Jetson Xavier case was sourced from Yeggi. Ensure you download the appropriate files compatible with your model of Jetson Xavier.
+
+2. **Prepare the 3D Printer**:
+   - Ensure your 3D printer is calibrated and ready for printing.
+   - Use the appropriate filament material recommended for your drone's environment (e.g., PLA, ABS, or PETG).
+
+3. **Print the Parts**:
+   - Load the CAD files into your slicing software.
+   - Configure the print settings based on the filament and the desired strength of the mounting pieces.
+   - Start the print and monitor the process to ensure quality.
+
+4. **Assemble the Mounting Pieces**:
+   - Once printed, assemble the parts according to the instructions provided in the CAD file documentation.
+   - Test fit the Nvidia Jetson Xavier and Intel RealSense on the printed mounts to ensure a secure attachment.
 
 <br> 
 
