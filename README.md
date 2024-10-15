@@ -25,7 +25,7 @@
 - [ ] Implement a mobile version of an image classification model (YOLO 8 for instance), which would be the most advanced one that works the best on the hardware.
 - [x] Provide the CPU usage (you need to have some CPU capacity left for later specific calculations).
 - [x] Publish the live results on a local IP in which the ground station be able to access the results.
-- [ ] You need to make the drone fully wireless, so you should make sure you will not need to have any initializations on the Jetson before your flight with getting a wired connection to it (hint: the Jetson can turn on automatically and get connected to specific wifi or even provide its own hotspot. So, by knowing its IP, you should be able to SHH into it from the ground station and run your codes.).
+- [x] You need to make the drone fully wireless, so you should make sure you will not need to have any initializations on the Jetson before your flight with getting a wired connection to it (hint: the Jetson can turn on automatically and get connected to specific wifi or even provide its own hotspot. So, by knowing its IP, you should be able to SHH into it from the ground station and run your codes.).
 
 ### Steps to do the tasks:
 
@@ -158,7 +158,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
      ```
 
 <br> 
-
+---
 ## Part 2: Drone hardware assembling 
 
 - [x] Assemble the frame.
@@ -292,7 +292,7 @@ To securely attach the Nvidia Jetson Xavier and Intel RealSense to the drone, yo
    - Test fit the Nvidia Jetson Xavier and Intel RealSense on the printed mounts to ensure a secure attachment.
 
 <br> 
-
+---
 ## Part 3: Initial setups
 
 - [x] Initial frameware setup of the Pixhawk.
@@ -429,7 +429,7 @@ We are using an M8N GPS module connected to the GPS1 port on the Pixhawk 6x.
 Ensure all these safety features are working correctly before proceeding to attach the blades or perform any flight tests.
 
   <br> 
-
+---
 ## Part 4.01: Local positioning (indoor flight) using Optitrack system.
 
 - [x] Search for the provided documentation provided for the Pixhawk and follow the steps.
@@ -440,8 +440,35 @@ Ensure all these safety features are working correctly before proceeding to atta
 - [ ] Print the location data from the ROS node to make sure everything is fine.
 - [x] Do the required wiring connections to connect Jetson to Pixhawk
 - [ ] Follow the steps for completing the architecture of ROS on the Jetson device.
-- [ ] Test the result by trying POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode from your flight controller (Ardupilot or QGC).
+- [x] Test the result by trying POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode from your flight controller (Ardupilot or QGC).
 
+### OptiTrack Setup Guide
+
+Follow these instructions to set up OptiTrack, calibrate the cameras, create a rigid body, and stream the data.
+
+### Step 1: Install OptiTrack Motive
+
+1. Visit the [OptiTrack Motive Download Page](https://optitrack.com/software/motive/) and download the latest version of Motive.
+2. Run the installer and follow the prompts to install Motive on your computer.
+3. Once the installation is complete, launch Motive.
+
+### Step 2: Calibrate the Cameras
+
+1. **Setup the Calibration Environment**
+   - Ensure that all OptiTrack cameras are positioned securely and connected to the system.
+   - Open Motive and select the **Calibration** tab.
+2. **Start Wand Calibration**
+   - Select **Wand Calibration** from the calibration options.
+   - Use the OptiTrack calibration wand and wave it around the capture volume.
+   - Make sure that the wand is visible to as many cameras as possible from different angles.
+   - Monitor the calibration progress in Motive until it indicates sufficient data has been captured.
+3. **Analyze the Calibration**
+   - Once enough wand data is captured, click **Calculate** to process the calibration.
+   - The software will calculate individual camera positions and orientations.
+4. **Review Calibration Results**
+   - After the calculation, check the calibration error values for each camera.
+   - Ensure that the calibration error is within an acceptable range (generally less than 1 mm).
+   - If the error is high, repeat the calibration until you get an optimal result.
 
   <br> 
 
