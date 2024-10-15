@@ -466,6 +466,23 @@ Ensure all these safety features are working correctly before proceeding to atta
    - Ensure that the calibration error is within an acceptable range (generally less than 1 mm).
    - If the error is high, repeat the calibration until you get an optimal result.
 
+### Step 3: Create a Rigid Body
+1. **Setup the Rigid Body Markers**
+   - Attach reflective markers to the object you want to create as a rigid body.
+   - Make sure the markers are visible from multiple angles and spread across the object.
+   - Mask out any unnecessary elements that were accidentally captured.
+2. **Define the Rigid Body in Motive**
+   - In Motive, go to the **Rigid Body** tab.
+   - Select the **Markers** that you want to use to create the rigid body.
+   - Right-click and select **Create Rigid Body**.
+3. **Adjust Rigid Body Properties**
+   - Name the rigid body appropriately.
+   - Check the **Marker Count** and adjust the settings to ensure the rigid body is tracked reliably.
+   - Set the **Pivot Point** if needed for specific applications.
+
+### Step 4: Stream Data
+1. **Configure Streaming Settings**
+
   <br> 
 
 ## Part 4.02 (optional): Visual Inertial Odometry (VIO)
