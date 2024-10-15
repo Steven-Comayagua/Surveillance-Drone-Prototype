@@ -158,7 +158,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_
      ```
 
 <br> 
----
+
 ## Part 2: Drone hardware assembling 
 
 - [x] Assemble the frame.
@@ -292,7 +292,7 @@ To securely attach the Nvidia Jetson Xavier and Intel RealSense to the drone, yo
    - Test fit the Nvidia Jetson Xavier and Intel RealSense on the printed mounts to ensure a secure attachment.
 
 <br> 
----
+
 ## Part 3: Initial setups
 
 - [x] Initial frameware setup of the Pixhawk.
@@ -330,7 +330,7 @@ References:
 #### Optional - Joystick Manual Test Flight
 
 We used ArduPilot to manually fly our drone with an RC (PS4 controller in our case with the joystick option within ArduPilot). 
-The radio controller setting RC option is also the best and favored option, but at this moment, our selected receiver (AR410) isn't working correctly with our Pixhawk 6x.
+The radio controller setting RC option is also the best and favored option, but at this moment, our selected receiver (R86C) isn't working correctly with our Pixhawk 6x.
 
 1. Configure all the needed joystick direction flight options, making sure to have an ARM and DISARM button.
 2. Follow the steps online for detailed instructions on how to set up and configure the manual test flight.
@@ -429,7 +429,7 @@ We are using an M8N GPS module connected to the GPS1 port on the Pixhawk 6x.
 Ensure all these safety features are working correctly before proceeding to attach the blades or perform any flight tests.
 
   <br> 
----
+
 ## Part 4.01: Local positioning (indoor flight) using Optitrack system.
 
 - [x] Search for the provided documentation provided for the Pixhawk and follow the steps.
@@ -444,16 +444,12 @@ Ensure all these safety features are working correctly before proceeding to atta
 
 ### OptiTrack Setup Guide
 
-Follow these instructions to set up OptiTrack, calibrate the cameras, create a rigid body, and stream the data.
-
 ### Step 1: Install OptiTrack Motive
-
 1. Visit the [OptiTrack Motive Download Page](https://optitrack.com/software/motive/) and download the latest version of Motive.
 2. Run the installer and follow the prompts to install Motive on your computer.
 3. Once the installation is complete, launch Motive.
 
 ### Step 2: Calibrate the Cameras
-
 1. **Setup the Calibration Environment**
    - Ensure that all OptiTrack cameras are positioned securely and connected to the system.
    - Open Motive and select the **Calibration** tab.
