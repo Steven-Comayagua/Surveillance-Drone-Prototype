@@ -442,11 +442,12 @@ Ensure all these safety features are working correctly before proceeding to atta
 - [x] Make sure to adjust the drone's predefined coordination (X, Y, Z) with the Optitrack coordination, and fix the initial point.
 - [x] Fix your initial position on the field.
 - [x] Add markers to the drone and make a rigid body.
-- [x] publish the data from the Optitrack side as a ROS node.
-- [x] Print the location data from the ROS node to make sure everything is fine.
+- [x] publish the data from the Optitrack side.
+- [x] Print the location data from the Optitrack to make sure everything is fine.
 - [x] Do the required wiring connections to connect Jetson to Pixhawk
-- [ ] Follow the steps for completing the architecture of ROS on the Jetson device.
+- [ ] Follow the steps for completing the architecture to use the Optitrack data as the local positioning.
 - [x] Test the result by trying POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode from your flight controller (Ardupilot or QGC).
+- [ ] Provide a demo in which you will put the drone in offboard mode and give it waypoints to take off, hold position, go to another location, hold, and then land. Simultaneously, the drone should do the image classification by getting the orders directly from the ground station wirelessly.
 
 ### OptiTrack Setup Guide
 
