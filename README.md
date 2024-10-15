@@ -263,7 +263,13 @@ Holybro X500v2 Assembly Instructions: https://docs.px4.io/main/en/frames_multico
    3. Pass screws through the arms, tighten nylon nuts, and connect XT30 power connectors to the power board.
    4. Pass signal wires through the top plate for later connection to Pixhawk (Figure 12).
    5. Tighten all 16 screws and nuts using a hex wrench and nut driver (Figure 13).
-
+#### Mounting the Pixhawk 6X and M8N GPS  
+**Mount the Pixhawk 6X:** 
+   1. Use stickers to mount Pixhawk on the top plate, aligning the arrow on Pixhawk with the top plate arrow (Figure 13).  
+**Install the M8N GPS:**  
+   2. Secure the GPS mount onto the companion computer plate using 4 screws and nuts (Figure 14).  
+   3. Stick the GPS to the top of the GPS mast and mount the mast, ensuring the GPS arrow points forward (Figures 15 and 16).  
+(ADDPICTURESLATER) 
 
 Wiring the Pixhawk with sensors:
 ![image](https://github.com/Steven-Comayagua/Surveillance-Drone-Prototype/assets/93970988/4c4af8c1-6dba-4aee-a217-9528f46ab05f)
@@ -436,8 +442,8 @@ Ensure all these safety features are working correctly before proceeding to atta
 - [x] Make sure to adjust the drone's predefined coordination (X, Y, Z) with the Optitrack coordination, and fix the initial point.
 - [x] Fix your initial position on the field.
 - [x] Add markers to the drone and make a rigid body.
-- [ ] publish the data from the Optitrack side as a ROS node.
-- [ ] Print the location data from the ROS node to make sure everything is fine.
+- [x] publish the data from the Optitrack side as a ROS node.
+- [x] Print the location data from the ROS node to make sure everything is fine.
 - [x] Do the required wiring connections to connect Jetson to Pixhawk
 - [ ] Follow the steps for completing the architecture of ROS on the Jetson device.
 - [x] Test the result by trying POSITION (controlling the drone with complete stability) or HOLD (it means to take off and hover in place at a stable altitude without the need for RC) mode from your flight controller (Ardupilot or QGC).
