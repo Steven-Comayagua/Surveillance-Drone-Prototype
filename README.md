@@ -475,8 +475,9 @@ Ensure all these safety features are working correctly before proceeding to atta
 
 ### Step 3: Create a Rigid Body
 1. **Setup the Rigid Body Markers**
-   - Attach reflective markers to the object you want to create as a rigid body.
+   - Attach reflective markers to the Drone in order to create a rigid body.
    - Make sure the markers are visible from multiple angles and spread across the object.
+   - Make sure the markers are a nonuniform polygon shape (not a perfect sqaure).
    - Mask out any unnecessary elements that were accidentally captured.
 2. **Define the Rigid Body in Motive**
    - In Motive, go to the **Rigid Body** tab.
