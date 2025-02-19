@@ -95,14 +95,19 @@ Once you open the SDK manager, you will be greeted with this screen:
    - Verify that the Jetson Xavier NX is correctly set up and all components are working properly.
 
 
-## - Connect the Intel Real Sense
+## - Connect the Intel Real Sense Depth Camera with Yolov8
 
 
-### - Install Python 3.8.10 on the Jetson Xavier NX**
+### - Install Python 3.8.10 on the Jetson Xavier NX + Setting up Yolov8**
 
 **Requirements**:
 - Nvidia Jetson Xavier NX
 - Python 3.8.10 source code
+- Intel Real Sense
+- Ultralytics
+- PyTorch
+- Torchvision
+- Yolov8
 
 ### Instructions
 
@@ -125,52 +130,84 @@ Once you open the SDK manager, you will be greeted with this screen:
      ```bash
      python3 --version
      ```
-     
-## - Installing OpenCV with Python 3.8.10
+After flashing the microSD card to JetPack version 5.1.3, we wanted to set up Yolov8 on the Xavier NX. Yolov8 requires Pytorch, Torchvision, and an Ultralytics package to operate.
+References used for this process: NVIDIA Jetson - Ultralytics YOLO Docs
+<img width="408" alt="image" src="https://github.com/user-attachments/assets/d1542607-4cdf-4d40-b600-b97e027774d8" />
+Since we did not have a pre-built docker image for the Xavier, we used “Start without Docker.
 
-**Requirements**:
-- Python 3.8.10 installed on the Jetson Xavier NX
-- OpenCV source code and OpenCV contrib modules
+4. **Installing Ultralytics Package**:
+   - Open a terminal on the Jetson Xavier NX
+   - Update packages list, install pip and upgrade to the latest
+   ```bash
+   sudo apt update
+   sudo apt install python3-pip -y
+   pip install -U pip
+   ```
+   - Install Ultralytics pip package with optional dependencies
+   ```bash
+   pip install ultralytics[export]
+   ```
+   - Reboot the device
+   ```bash
+   sudo reboot
+   ```
+5. **Installing Pytorch and Torchvision**:
+Once the Ultralytics package is installed, Torch and Torchvision will also be installed. However, these packages installed through pip are not compatible with Jetson platforms since they are based on ARM64 architecture. Instead, we need to manually install a pre-built PyTorch pip wheel, and install Torchvision. This portion appeared to cause issues which will be discussed shortly.
+   - Uninstalling currently installed PyTorch and Torchvision
+   ```bash
+   pip uninstall torch torchvision
+   ```
+   - Installing PyTorch 2.1.0 according to JP5.1.3
+   ```bash
+   sudo apt-get install -y libopenblas-base libopenmpi-dev
 
-### Instructions
+   wget https://developer.download.nvidia.com/compute/redist/jp/v512/pytorch/torch-2.1.0a0+41361538.nv23.06-cp38-cp38-linux_aarch64.whl -O torch-2.1.0a0+41361538.nv23.06-cp38-   cp38-linux_aarch64.whl
+   
+   pip install torch-2.1.0a0+41361538.nv23.06-cp38-cp38-linux_aarch64.whl
+   ```
+   - Installing Torchvision v0.16.2 according to PyTorch v2.1.0
+   ```bash
+   sudo apt install -y libjpeg-dev zlib1g-dev
+   git clone https://github.com/pytorch/vision torchvision
+   cd torchvision
+   git checkout v0.16.2
+   python3 setup.py install –user
+   ```
+**If Errors show up**
+<img width="391" alt="image" src="https://github.com/user-attachments/assets/842c4167-aea8-42d1-9645-a783db4bb9b1" />
+   - Verify CUDA installation
+   ```bash
+   sudo apt-get update
+   sudo apt-get install cuda
+   ```
 
-1. **Ensure Python 3.8.10 Development Package is Installed**:
-   - Ensure the development files for Python 3.8.10 are present (skip if just installed).
-     ```bash
-     python3 --version
-     ```
-2. **Prepare the Build Environment for OpenCV**:
-   - Install necessary dependencies by running the following command:
-     ```bash
-     sudo apt install -y build-essential cmake git pkg-config libgtk-3-dev \
-     libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev \
-     libx264-dev libjpeg-dev libpng-dev libtiff-dev gfortran openexr \
-     libatlas-base-dev python3-dev python3-numpy libtbb2 libtbb-dev libdc1394-22-dev
-     ```
-3. **Download OpenCV and OpenCV Contrib Modules**:
-   - Download the necessary source code by running the following commands:
-     ```bash
-     mkdir -p ~/opencv_build && cd ~/opencv_build
-     git clone https://github.com/opencv/opencv.git
-     git clone https://github.com/opencv/opencv_contrib.git
-     ```
-4. **Build and Install OpenCV**:
-   - Navigate to the OpenCV directory:
-     ```bash
-     cd ~/opencv_build/opencv
-     rm -rf build
-     mkdir build && cd build
-     ```
-   - Run the `cmake` command with the necessary options, specifying the paths to Python 3.12:
-```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D PYTHON_EXECUTABLE=/usr/local/bin/python3.8-D PYTHON_INCLUDE_DIR=/usr/local/include/python3.8-D PYTHON_LIBRARY=/usr/local/lib/libpython3.12.so ..
-```
-   - Build and install OpenCV:
-     ```bash
-     make -j$(nproc)
-     sudo make install
-     sudo ldconfig
-     ```
+   - Add CUDA paths to your environment variables
+   ```bash
+   echo ‘export PATH=/usr/local/cuda/bin:$PATH’ >> ~/.bashrc
+
+   echo ‘export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH’ >> ~/.bashrc
+
+   source ~/.bashrc
+   ```
+   - Reinstall PyTorch and Torchvision according to the guide.
+<img width="378" alt="image" src="https://github.com/user-attachments/assets/964550b8-07c3-4e72-ad59-254b36731a4c" />
+
+   - Install cuDNN
+   ```bash
+   sudo apt-get update
+   sudo apt-get install libcudnn8
+   libcudnn8-dev
+   ```
+   
+   - Ensure that the paths to cuDNN libraries are correctly set in your environment variables
+   ```bash
+   echo ‘export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH’ >> ~/.bashrc
+
+   echo ‘export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH’ >> ~/.bashrc
+   source ~/.bashrc
+   ```
+ - Reinstall PyTorch and Torchvision according to the guide. 
+--To be Continued.--
 
 <br> 
 
