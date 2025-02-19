@@ -42,14 +42,29 @@
 
 ### Instructions
 
+<img width="328" alt="image" src="https://github.com/user-attachments/assets/109d4a2c-b1ba-43f1-97b4-4da73c9f3c87" />
 1. **Download SDK Manager**:
+First things first:
+●	Insert the MicroSD card into the Xavier NX, the slot should be located below the fan.
    - Using a Linux environment, visit the NVIDIA Developer website and go to the NVIDIA SDK Manager section: https://developer.nvidia.com/nvidia-sdk-manager download the SDK Manager for Linux.
+●	Place the female to female pin jumper wires to pins 9 and 10 to enter in recovery mode. This is so the Linux computer can recognize the device when it's plugged in.
+●	Connect the Xavier NX to the Linux computer with the Micro USB to USB Type-A cable
+<img width="274" alt="image" src="https://github.com/user-attachments/assets/3e28a387-def8-4e66-ab8f-49353a6a75a8" />
+
 2. **Install SDK Manager**:
    - Open a terminal on your Linux computer and install the downloaded SDK Manager:
      ```bash
      sudo apt update
      sudo apt install ./sdkmanager_*_amd64.deb
      ```
+     <img width="430" alt="image" src="https://github.com/user-attachments/assets/2f2a07a0-03e0-4c63-a9fc-eb2b3595f37a" />
+●	Click on the marked box
+●	Once done, go to the files in the Linux computer and double click the file to start installation
+
+Once you open the SDK manager, you will be greeted with this screen:
+<img width="463" alt="image" src="https://github.com/user-attachments/assets/7786478f-238f-431a-a0d4-b556d6d1467b" />
+
+
 3. **Prepare the MicroSD Card**:
    - Download the JetPack 5.1.3 image from the JetPack Download Center: https://developer.nvidia.com/embedded/jetpack
    - Use Etcher: https://www.balena.io/etcher/ to flash and formart the JetPack image onto the microSD card:
