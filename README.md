@@ -41,62 +41,66 @@
 - Monitor, keyboard, and mouse for initial setup
 
 ### Instructions
-
+<p align="center">
 <img width="328" alt="image" src="https://github.com/user-attachments/assets/109d4a2c-b1ba-43f1-97b4-4da73c9f3c87" />
+</p>
 1. **Download SDK Manager**:
 First things first:
-●	Insert the MicroSD card into the Xavier NX, the slot should be located below the fan.
-   - Using a Linux environment, visit the NVIDIA Developer website and go to the NVIDIA SDK Manager section: https://developer.nvidia.com/nvidia-sdk-manager download the SDK Manager for Linux.
-●	Place the female to female pin jumper wires to pins 9 and 10 to enter in recovery mode. This is so the Linux computer can recognize the device when it's plugged in.
-●	Connect the Xavier NX to the Linux computer with the Micro USB to USB Type-A cable
-<img width="274" alt="image" src="https://github.com/user-attachments/assets/3e28a387-def8-4e66-ab8f-49353a6a75a8" />
-
-2. **Install SDK Manager**:
+   - Insert the MicroSD card into the Xavier NX, the slot should be located below the fan.
+      - Using a Linux environment, visit the NVIDIA Developer website and go to the NVIDIA SDK Manager section: https://developer.nvidia.com/nvidia-sdk-manager download the SDK           Manager for Linux.
+   - Place the female to female pin jumper wires to pins 9 and 10 to enter in recovery mode. This is so the Linux computer can recognize the device when it's plugged in.
+   - Connect the Xavier NX to the Linux computer with the Micro USB to USB Type-A cable.
+     <p align="center">
+     <img width="274" alt="image" src="https://github.com/user-attachments/assets/3e28a387-def8-4e66-ab8f-49353a6a75a8" />
+     </p>
+3. **Install SDK Manager**:
    - Open a terminal on your Linux computer and install the downloaded SDK Manager:
      ```bash
      sudo apt update
      sudo apt install ./sdkmanager_*_amd64.deb
      ```
+     <p align="center">
      <img width="430" alt="image" src="https://github.com/user-attachments/assets/2f2a07a0-03e0-4c63-a9fc-eb2b3595f37a" />
-●	Click on the marked box
-●	Once done, go to the files in the Linux computer and double click the file to start installation
+     </p>
+   - Click on the marked box
+   - Once done, go to the files in the Linux computer and double click the file to start installation
 
-Once you open the SDK manager, you will be greeted with this screen:
+   Once you open the SDK manager, you will be greeted with this screen:
+   <p align="center">
 <img width="463" alt="image" src="https://github.com/user-attachments/assets/7786478f-238f-431a-a0d4-b556d6d1467b" />
+   </p>
 
-
-3. **Prepare the MicroSD Card**:
+4. **Prepare the MicroSD Card**:
    - Download the JetPack 5.1.3 image from the JetPack Download Center: https://developer.nvidia.com/embedded/jetpack
    - Use Etcher: https://www.balena.io/etcher/ to flash and formart the JetPack image onto the microSD card:
      ```bash
      sudo apt install etcher-electron
      etcher-electron
      ```
-4. **Insert the MicroSD Card**:
+5. **Insert the MicroSD Card**:
    - Insert the microSD card into the Jetson Xavier NX slot (located under the fan).
-5. **Connect and Power On the Jetson Xavier NX**:
+6. **Connect and Power On the Jetson Xavier NX**:
    - Connect the USB-C cable from the Jetson Xavier NX to your Linux computer.
    - Connect the power supply to the Jetson Xavier NX.
    - Power on the Jetson Xavier NX.
-6. **Launch SDK Manager**:
+7. **Launch SDK Manager**:
    - Open the SDK Manager on your Linux computer.
    - Log in with your NVIDIA Developer account.
    - Select the Jetson Xavier NX as the target hardware.
    - Choose JetPack 5.1.3 as the SDK version to install.
-7. **Flash the Jetson Xavier NX**:
+8. **Flash the Jetson Xavier NX**:
    - Follow the prompts in the SDK Manager to flash the Jetson Xavier NX. This process includes installing the operating system and additional SDK components.
    - Ensure that the connection type is set to `USB` and enter the correct details as prompted by the SDK Manager.
    - Complete any remaining setup steps as instructed by the SDK Manager, such as configuring network settings and installing additional software.
-8. **Complete the Ubuntu Jetson Setup**:
+9. **Complete the Ubuntu Jetson Setup**:
    - After flashing, the Jetson Xavier NX will reboot.
    - Connect the monitor, keyboard, and mouse to the Jetson Xavier NX.
    - Follow the on-screen instructions to complete the Ubuntu setup, including configuring language, time zone, and user account settings.
-9. **Verify Installation**:
+10. **Verify Installation**:
    - Verify that the Jetson Xavier NX is correctly set up and all components are working properly.
 
 
 ## - Connect the Intel Real Sense Depth Camera with Yolov8
-
 
 ### - Install Python 3.8.10 on the Jetson Xavier NX + Setting up Yolov8**
 
@@ -132,7 +136,9 @@ Once you open the SDK manager, you will be greeted with this screen:
      ```
 After flashing the microSD card to JetPack version 5.1.3, we wanted to set up Yolov8 on the Xavier NX. Yolov8 requires Pytorch, Torchvision, and an Ultralytics package to operate.
 References used for this process: NVIDIA Jetson - Ultralytics YOLO Docs
+<p align="center">
 <img width="408" alt="image" src="https://github.com/user-attachments/assets/d1542607-4cdf-4d40-b600-b97e027774d8" />
+</p>
 Since we did not have a pre-built docker image for the Xavier, we used “Start without Docker.
 
 4. **Installing Ultralytics Package**:
@@ -174,7 +180,9 @@ Once the Ultralytics package is installed, Torch and Torchvision will also be in
    python3 setup.py install –user
    ```
 **If Errors show up**
+<p align="center">
 <img width="391" alt="image" src="https://github.com/user-attachments/assets/842c4167-aea8-42d1-9645-a783db4bb9b1" />
+</p>
    - Verify CUDA installation
    ```bash
    sudo apt-get update
@@ -190,8 +198,9 @@ Once the Ultralytics package is installed, Torch and Torchvision will also be in
    source ~/.bashrc
    ```
    - Reinstall PyTorch and Torchvision according to the guide.
+<p align="center">
 <img width="378" alt="image" src="https://github.com/user-attachments/assets/964550b8-07c3-4e72-ad59-254b36731a4c" />
-
+</p>
    - Install cuDNN
    ```bash
    sudo apt-get update
